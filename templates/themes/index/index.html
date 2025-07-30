@@ -14,12 +14,25 @@
 <body>
 	{{ boardlist.top }}
 	<header>
-	    <img class="icon" src="{{ settings.icon }}">
 		<h1>{{ settings.title }}</h1>
 		<div class="subtitle">{{ settings.subtitle }}</div>
 	</header>
+	<div class="box-wrap news-header">
 	{% if config.url_banner %}<img class="board_image" src="{{ config.url_banner }}" {% if config.banner_width or config.banner_height %}style="{% if config.banner_width %}width:{{ config.banner_width }}px{% endif %};{% if config.banner_width %}height:{{ config.banner_height }}px{% endif %}" {% endif %}alt="" />{% endif %}
-	
+	{% if news[0] %}
+	<div class="ban">
+		<h2 id="{{ news[0].id }}">
+			{% if news[0].subject %}
+			{{ news[0].subject }}
+			{% else %}
+			<em>no subject</em>
+			{% endif %}
+			<span class="unimportant"> &mdash; by {{ news[0].name }} at {{ news[0].time|date(config.post_date, config.timezone) }}</span>
+		</h2>
+		<p>{{ news[0].body }}</p>
+	</div>
+	</div>
+	{% endif %}
 	<div class="box-wrap">
 	    <fieldset>
 		<legend>Boards</legend>
@@ -55,24 +68,6 @@
 				{% endif %}
 			</div>
 		{% endif %}
-	
-	    <div class="ban">
-		{% if news|length == 0 %}
-			<p style="text-align:center" class="unimportant">(No news to show.)</p>
-		{% else %}
-			{% for entry in news %}
-				<h2 id="{{ entry.id }}">
-					{% if entry.subject %}
-						{{ entry.subject }}
-					{% else %}
-						<em>no subject</em>
-					{% endif %}
-					<span class="unimportant"> &mdash; by {{ entry.name }} at {{ entry.time|date(config.post_date, config.timezone) }}</span>
-				</h2>
-				<p>{{ entry.body }}</p>
-			{% endfor %}
-		{% endif %}
-	    </div>
 	</div>
 
 	<div class="box-wrap">
@@ -82,12 +77,17 @@
 				{% for post in recent_images %}
 				<div class="image-item">
 					<a href="{{ post.link }}">
-						<img src="{{ post.src }}" style="width:{{ post.thumbwidth }}px;height:{{ post.thumbheight }}px" alt="">
+						<img src="{{ post.src }}" style="width:{{ post.thumbwidth }}px;height:{{ post.thumbheight }}px" alt="{{ post.name }}">
+						<div class="overlay" style="width:{{ post.thumbwidth }}px;height:{{ post.thumbheight }}px">
+							<div class="post-name">{{ post.name }}</div>
+							<div class="post-snippet">{{ post.snippet }}</div>
+						</div>
 					</a>
 				</div>
 				{% endfor %}
 			</div>
 		</div>
+		<!--
 		<div class="box right">
 			<h2>Latest Posts</h2>
 			<ul>
@@ -101,6 +101,7 @@
 				{% endfor %}
 			</ul>
 		</div>
+		-->
 	</div>
 
 	<hr/>

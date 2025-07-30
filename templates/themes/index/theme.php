@@ -76,6 +76,8 @@
 				$post['link'] = $config['root'] . $board['dir'] . $config['dir']['res']
 				  . link_for($post) . '#' . $post['id'];
 
+				$post['snippet'] = pm_snippet($post['body'], 60);
+
 				if ($files) {
 					if ($files[0]->thumb == 'spoiler') {
 						$tn_size = @getimagesize($config['spoiler_image']);
@@ -164,8 +166,8 @@
 			$boardlist = array_filter($boards, function($board) use ($excluded_boards) {
 				return !in_array($board['uri'], $excluded_boards);
 			});
-			
-			
+
+
 			return Element('themes/index/index.html', Array(
 				'settings' => $settings,
 				'config' => $config,

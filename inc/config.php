@@ -1007,8 +1007,8 @@
 	// You should upload your banners to static/banners.
 	$config['url_banner'] = '/b.php';	// Custom script may be used.
 	// Setting the banner dimensions stops the page shifting as it loads. If you have banners of various different sizes, unset these.
-	$config['banner_width'] = 300;
-	$config['banner_height'] = 100;
+	$config['banner_width'] = 400;
+	$config['banner_height'] = 150;
 
 	// Custom stylesheets available for the user to choose. See the "stylesheets/" folder for a list of
 	// available stylesheets (or create your own).
@@ -1016,7 +1016,8 @@
 		// Default; there is no additional/custom stylesheet for this.
 		'Yotsuba B' => '',
 		'Yotsuba' => 'yotsuba.css',
-        'futaba' => 'futaba+vichan.css'
+        'futaba' => 'futaba+vichan.css',
+        'gentoochan' => 'gentoochan.css'
 	];
 	// $config['stylesheets']['Futaba'] = 'futaba.css';
 	// $config['stylesheets']['Dark'] = 'dark.css';
@@ -1052,7 +1053,14 @@
 	// 	array('k', array('l', 'm')),
 	// 	array('status' => 'http://status.example.org/')
 	// );
-    $config['boards'] = [['t','a']];
+
+
+    $config['boards'] = [
+        ['Main' => '/sc', 'Art' => '/a','Talk' => '/t'],
+        ['Home' => '/index.html'],
+        ['Rules' => '/rules.html'],
+        ['Discord' => \getenv('DISCORD_LINK')]
+    ];
 	// Whether or not to put brackets around the whole board list
 	$config['boardlist_wrap_bracket'] = false;
 

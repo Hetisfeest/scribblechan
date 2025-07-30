@@ -41,8 +41,6 @@
 .box img {
 	float: left;
 	margin: 5px;
-	width: auto !important;
-	height: 100px !important;
 	border-radius: 10px;
 }
 .icon {
@@ -84,10 +82,10 @@
 	color: #060;
 	border: 1px solid #060;
 	float: left;
-	width:72%
+	width:100%
 }
 .box.right {
-	width: 25%;
+	width: 0%;
 	background: #eef;
 	color: #006;
 	border: 1px solid #006;
@@ -121,4 +119,90 @@
 .recent-images img{
 	border-radius: 0 !important;
 	margin: 0 !important;
+}
+
+.box ul {
+	padding: 2px 15px;
+}
+.box ul li {
+	list-style: none;
+	margin: 0;
+}
+
+.image-item {
+	position: relative; /* Required for absolute positioning of overlay */
+	width: fit-content; /* Ensure container fits image size */
+}
+
+.image-item img {
+	display: block; /* Remove any default spacing */
+	transition: opacity 0.5s ease; /* Smooth dimming effect */
+}
+
+.image-item img:hover {
+	opacity: 0.3; /* Dim image on hover, as in W3Schools example */
+}
+
+.image-item .overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0; /* Hidden by default */
+	transition: opacity 0.5s ease; /* Smooth fade-in effect */
+	background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 14px; /* Adjust based on your design */
+	text-align: center;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+.image-item:hover .overlay {
+	opacity: 1; /* Show overlay on hover */
+}
+
+.overlay .post-name {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	color: white;
+	font-size: 14px;
+	text-align: right;
+}
+
+.overlay .post-snippet {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	color: white;
+	font-size: 12px;
+	text-align: left;
+	max-height: 60%; /* Limit height to avoid overlapping post-name */
+	overflow: auto; /* Scroll if too long */
+}
+
+.news-header{
+	display: flow-root;
+}
+
+.news-header .ban{
+	display: table;
+	height: 150px;
+	margin-top: 12px;
+	margin-bottom: 0px;
+	float: right;
+	width: 100%;
+	max-width: 640px;
+}
+
+.news-header .board_image{
+	float:left;
 }

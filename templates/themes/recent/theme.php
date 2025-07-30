@@ -148,14 +148,24 @@
 				preg_match_all('/"size":([0-9]*)/', $file[0], $matches);
 				$stats['active_content'] += array_sum($matches[1]);
 			}
-			
+
+			$query = query("SELECT * FROM ``news`` ORDER BY `time` DESC" . ($settings['no_recent'] ? ' LIMIT ' . $settings['no_recent'] : '')) or error(db_error());
+			$news = $query->fetchAll(PDO::FETCH_ASSOC);
+
+			$excluded_boards = isset($settings['excludeboardlist']) ? explode(' ', $settings['excludeboardlist']) : [];
+			$boardlist = array_filter($boards, function($board) use ($excluded_boards) {
+				return !in_array($board['uri'], $excluded_boards);
+			});
+
 			return Element('themes/recent/recent.html', Array(
 				'settings' => $settings,
 				'config' => $config,
 				'boardlist' => createBoardlist(),
 				'recent_images' => $recent_images,
 				'recent_posts' => $recent_posts,
-				'stats' => $stats
+				'stats' => $stats,
+				'news' => $news,
+				'boards' => $boardlist
 			));
 		}
 	};
