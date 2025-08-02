@@ -18,7 +18,7 @@
 		<div class="subtitle">{{ settings.subtitle }}</div>
 	</header>
 	<div class="box-wrap news-header">
-	{% if config.url_banner %}<img class="board_image" src="{{ config.url_banner }}" {% if config.banner_width or config.banner_height %}style="{% if config.banner_width %}width:{{ config.banner_width }}px{% endif %};{% if config.banner_width %}height:{{ config.banner_height }}px{% endif %}" {% endif %}alt="" />{% endif %}
+	{% if config.url_banner %}<img class="board_image" src="{{ config.url_banner }}" alt="" />{% endif %}
 	{% if news[0] %}
 	<div class="ban">
 		<h2 id="{{ news[0].id }}">
@@ -34,40 +34,16 @@
 	</div>
 	{% endif %}
 	<div class="box-wrap">
-	    <fieldset>
-		<legend>Boards</legend>
-		<ul>
+		<div class="box boards">
+		<h2>Boards</h2>
+			<div class="list">
 			{% for board in boards %}
-				<li class="boardlinksurl">
-					<a href="{{ config.board_path|sprintf(board.uri) }}">
-						{{ board.title|e }}
-					</a>
-				</li>
+				<a href="{{ config.board_path|sprintf(board.uri) }}">
+					{{ board.title|e }}
+				</a>
 			{% endfor %}
-		</ul>
-	    </fieldset>
-	    <br>
-		{% if settings.description or settings.imageofnow or settings.quoteofnow or settings.videoofnow %}
-			<div class="mainBox">
-				<br>
-				{% if settings.description %}
-					<div class="description">{{ settings.description }}</div>
-					<br>
-				{% endif %}
-				{% if settings.imageofnow %}
-					<img class="imageofnow" src="{{ settings.imageofnow }}">
-					<br>
-				{% endif %}
-				{% if settings.quoteofnow %}
-					<div class="quoteofnow">{{ settings.quoteofnow }}</div>
-					<br>
-				{% endif %}
-				{% if settings.videoofnow %}
-					<iframe class="videoofnow" width="560" height="315" src="{{ settings.videoofnow }}"></iframe>
-					<br>
-				{% endif %}
 			</div>
-		{% endif %}
+		</div>
 	</div>
 
 	<div class="box-wrap">
@@ -103,7 +79,7 @@
 		</div>
 		-->
 	</div>
-
+	<p></p>
 	<hr/>
 
 	{% include 'footer.html' %}
