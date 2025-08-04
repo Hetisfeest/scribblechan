@@ -1441,7 +1441,7 @@
 	// $config['url_javascript'] = 'http://static.example.org/main.js';
 
 	// Website favicon.
-	// $config['url_favicon'] = '/favicon.gif';
+	 $config['url_favicon'] = '/static/sc_legacy/sc3.ico';
 
 	// Try not to build pages when we shouldn't have to.
 	$config['try_smarter'] = true;
