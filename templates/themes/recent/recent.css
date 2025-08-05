@@ -1,12 +1,14 @@
 .box-wrap {
+	max-width: 670px;
 	min-width: 332px;
-	margin: 60px auto;
+	margin: 30px auto;
 	overflow: auto;
 	padding: 0;
 }
 .box {
 	background: white;
 	border: 1px solid #98E;
+	width: 330px;
 	margin: 8px 0;
 	padding: 0;
 }
@@ -24,7 +26,6 @@
 	float: left;
 }
 .box.right {
-	width: 330px;
 	background: #eef;
 	color: #006;
 	border: 1px solid #006;
