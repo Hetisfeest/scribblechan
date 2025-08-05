@@ -281,3 +281,13 @@
 	flex-wrap: wrap;
 	padding: 10px;
 }
+
+.box-container{
+	max-width: 1450px;
+	margin: auto;
+}
+
+.boardlist .sub
+{
+	margin-right: 4px;
+}

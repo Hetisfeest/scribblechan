@@ -12,72 +12,59 @@
 	{% include 'header.html' %}
 </head>
 <body>
-	{{ boardlist.top }}
+    {{ boardlist.top }}
 	<header>
 		<h1>{{ settings.title }}</h1>
 		<div class="subtitle">{{ settings.subtitle }}</div>
 	</header>
-	<div class="box-wrap news-header">
-	{% if config.url_banner %}<img class="board_image" src="{{ config.url_banner }}" alt="" />{% endif %}
-	{% if news[0] %}
-	<div class="ban">
-		<h2 id="{{ news[0].id }}">
-			{% if news[0].subject %}
-			{{ news[0].subject }}
-			{% else %}
-			<em>no subject</em>
-			{% endif %}
-			<span class="unimportant"> &mdash; by {{ news[0].name }} at {{ news[0].time|date(config.post_date, config.timezone) }}</span>
-		</h2>
-		<p>{{ news[0].body }}</p>
-	</div>
-	</div>
-	{% endif %}
-	<div class="box-wrap">
-		<div class="box boards">
-		<h2>Boards</h2>
-			<div class="list">
-			{% for board in boards %}
-				<a href="{{ config.board_path|sprintf(board.uri) }}">
-					{{ board.title|e }}
-				</a>
-			{% endfor %}
-			</div>
+	<div class="box-container">
+		<div class="box-wrap news-header">
+		{% if config.url_banner %}<img class="board_image" src="{{ config.url_banner }}" alt="" />{% endif %}
+		{% if news[0] %}
+		<div class="ban">
+			<h2 id="{{ news[0].id }}">
+				{% if news[0].subject %}
+				{{ news[0].subject }}
+				{% else %}
+				<em>no subject</em>
+				{% endif %}
+				<span class="unimportant"> &mdash; by {{ news[0].name }} at {{ news[0].time|date(config.post_date, config.timezone) }}</span>
+			</h2>
+			<p>{{ news[0].body }}</p>
 		</div>
-	</div>
-
-	<div class="box-wrap">
-		<div class="box left">
-			<h2>Recent Images</h2>
-			<div class="recent-images">
-				{% for post in recent_images %}
-				<div class="image-item">
-					<a href="{{ post.link }}">
-						<img src="{{ post.src }}" style="width:{{ post.thumbwidth }}px;height:{{ post.thumbheight }}px" alt="{{ post.name }}">
-						<div class="overlay" style="width:{{ post.thumbwidth }}px;height:{{ post.thumbheight }}px">
-							<div class="post-name">{{ post.name }}</div>
-							<div class="post-snippet">{{ post.snippet }}</div>
-						</div>
+		</div>
+		{% endif %}
+		<div class="box-wrap">
+			<div class="box boards">
+			<h2>Boards</h2>
+				<div class="list">
+				{% for board in boards %}
+					<a href="{{ config.board_path|sprintf(board.uri) }}">
+						{{ board.title|e }}
 					</a>
+				{% endfor %}
 				</div>
-				{% endfor %}
 			</div>
 		</div>
-		<!--
-		<div class="box right">
-			<h2>Latest Posts</h2>
-			<ul>
-				{% for post in recent_posts %}
-				<li>
-					<strong>{{ post.board_name }}</strong>:
-					<a href="{{ post.link }}">
-						{{ post.snippet }}
-					</a>
-				</li>
-				{% endfor %}
-			</ul>
+
+		<div class="box-wrap">
+			<div class="box left">
+				<h2>Recent Images</h2>
+				<div class="recent-images">
+					{% for post in recent_images %}
+					<div class="image-item">
+						<a href="{{ post.link }}">
+							<img src="{{ post.src }}" style="width:{{ post.thumbwidth }}px;height:{{ post.thumbheight }}px" alt="{{ post.name }}">
+							<div class="overlay" style="width:{{ post.thumbwidth }}px;height:{{ post.thumbheight }}px">
+								<div class="post-name">{{ post.name }}</div>
+								<div class="post-snippet">{{ post.snippet }}</div>
+							</div>
+						</a>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
 		</div>
-		-->
 	</div>
 	<p></p>
 	<hr/>
