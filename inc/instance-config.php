@@ -7,7 +7,9 @@
  *
  *  You can copy values from config.php (defaults) and paste them here.
  */
-
+	$config['additional_javascript'][] = 'js/jquery.min.js';
+    $config['additional_javascript'][] = 'js/jquery-ui.custom.min.js';
+	$config['additional_javascript'][] = 'js/style-select.js';
 
 
 	// Database stuff
@@ -16,7 +18,9 @@
 	$config['db']['user']		= '';
 	$config['db']['password']	= '';
 	$config['db']['database']	= '';
-	
+
+
+
 	//$config['root']				= '/';
 	
 	@include('inc/secrets.php');

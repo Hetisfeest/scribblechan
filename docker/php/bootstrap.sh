@@ -36,6 +36,7 @@ fi
 ln -nfs \
     /code/tools/ \
     /code/*.php \
+    /code/rules.html \
     /code/LICENSE.* \
     /code/install.sql \
     /var/www/

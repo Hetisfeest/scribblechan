@@ -562,7 +562,7 @@
 
 	// Optional URL prefix for links (eg. "http://anonym.to/?").
 	$config['link_prefix'] = '';
-	$config['url_ads'] = &$config['link_prefix'];	 // leave alias
+	#$config['url_ads'] = &$config['link_prefix'];	 // leave alias
 
 	// Allow "uploading" images via URL as well. Users can enter the URL of the image and then vichan will
 	// download it. Not usually recommended.
@@ -1007,15 +1007,17 @@
 	// You should upload your banners to static/banners.
 	$config['url_banner'] = '/b.php';	// Custom script may be used.
 	// Setting the banner dimensions stops the page shifting as it loads. If you have banners of various different sizes, unset these.
-	$config['banner_width'] = 300;
-	$config['banner_height'] = 100;
+	$config['banner_width'] = 400;
+	$config['banner_height'] = 150;
 
 	// Custom stylesheets available for the user to choose. See the "stylesheets/" folder for a list of
 	// available stylesheets (or create your own).
 	$config['stylesheets'] = [
 		// Default; there is no additional/custom stylesheet for this.
 		'Yotsuba B' => '',
-		'Yotsuba' => 'yotsuba.css'
+		'Yotsuba' => 'yotsuba.css',
+        'futaba' => 'futaba+vichan.css',
+        'gentoochan' => 'gentoochan.css'
 	];
 	// $config['stylesheets']['Futaba'] = 'futaba.css';
 	// $config['stylesheets']['Dark'] = 'dark.css';
@@ -1052,6 +1054,13 @@
 	// 	array('status' => 'http://status.example.org/')
 	// );
 
+
+    $config['boards'] = [
+        ['Main' => '/sc', 'Art' => '/a','Talk' => '/t'],
+        ['Home' => '/index.html'],
+        ['Rules' => '/rules.html'],
+        ['Discord' => \getenv('DISCORD_LINK')]
+    ];
 	// Whether or not to put brackets around the whole board list
 	$config['boardlist_wrap_bracket'] = false;
 
@@ -1432,7 +1441,7 @@
 	// $config['url_javascript'] = 'http://static.example.org/main.js';
 
 	// Website favicon.
-	// $config['url_favicon'] = '/favicon.gif';
+	 $config['url_favicon'] = '/static/sc_legacy/sc3.ico';
 
 	// Try not to build pages when we shouldn't have to.
 	$config['try_smarter'] = true;

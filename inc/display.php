@@ -28,7 +28,14 @@ function doBoardListPart($list, $root, &$boards) {
 			$body .= ' <span class="sub" data-description="' . $key . '">[' . doBoardListPart($board, $root, $boards) . ']</span> ';
 		else {
 			if (gettype($key) == 'string') {
-				$body .= ' <a href="' . $board . '">' . $key . '</a> /';
+                if(strtolower($key) === 'rules')
+                {
+                    $body .= ' <a href="#" onClick="MyWindow=window.open(\'' . $board . '\',\'MyWindow\',\'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=700,height=450,left=200,top=200\'); return false;">' . $key . '</a> /';
+                }
+                else
+                {
+                    $body .= ' <a href="' . $board . '">' . $key . '</a> /';
+                }
 			} else {
 				$title = '';
 				if (isset ($boards[$board])) {
