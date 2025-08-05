@@ -1056,8 +1056,8 @@
 
 
     $config['boards'] = [
-        ['Main' => '/sc', 'Art' => '/a','Talk' => '/t'],
         ['Home' => '/index.html'],
+        ['World' => '/world', 'Arena' => '/arena','Talk' => '/talk'],
         ['Rules' => '/rules.html'],
         ['Discord' => \getenv('DISCORD_LINK')]
     ];
