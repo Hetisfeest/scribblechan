@@ -1057,7 +1057,7 @@
 
     $config['boards'] = [
         ['Home' => '/index.html'],
-        ['World' => '/world', 'Arena' => '/arena','Talk' => '/talk'],
+        ['World' => '/world', 'Arena' => '/arena', 'Draw Stuff' => '/draw', 'Talk' => '/talk'],
         ['Rules' => '/rules.html'],
         ['Discord' => \getenv('DISCORD_LINK')]
     ];
@@ -1120,6 +1120,9 @@
 	// Additional Javascript files to include on board index and thread pages. See js/ for available scripts.
 	$config['additional_javascript'][] = 'js/jquery.min.js';
 	$config['additional_javascript'][] = 'js/inline-expanding.js';
+
+    $config['additional_javascript'][] = 'js/ajax.js';
+    $config['additional_javascript'][] = 'js/file-selector.js';
 	// $config['additional_javascript'][] = 'js/local-time.js';
 
 	// Some scripts require jQuery. Check the comments in script files to see what's needed. When enabling

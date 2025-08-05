@@ -36,13 +36,14 @@ fi
 ln -nfs \
     /code/tools/ \
     /code/*.php \
-    /code/rules.html \
     /code/LICENSE.* \
     /code/install.sql \
     /var/www/
 # Static files accessible from the webserver must be copied.
 cp -ur /code/static /var/www/
 cp -ur /code/stylesheets /var/www/
+
+ln -nfs /code/static/pages/*.html /var/www/
 
 # Ensure correct permissions are set, since this might be bind mount.
 chown www-data /var/www
