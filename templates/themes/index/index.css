@@ -295,6 +295,6 @@
 
 @media (max-width: 550px) {
 	.box-wrap {
-		width: 90%;
+		max-width: 90%;
 	}
 }
