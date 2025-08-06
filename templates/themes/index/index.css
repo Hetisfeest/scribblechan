@@ -219,6 +219,12 @@
 	max-width: 640px;
 }
 
+.news-header .ban p {
+	overflow-y: auto;
+	height: 110px;
+	margin: 4px;
+}
+
 .news-header .board_image{
 	float:left;
 }
@@ -288,8 +294,7 @@
 	margin: auto;
 }
 
-.boardlist .sub
-{
+.boardlist .sub {
 	margin-right: 4px;
 }
 
@@ -302,3 +307,4 @@
 h1{
 	margin-top: 30px !important;
 }
+
