@@ -50,3 +50,5 @@ favicon.ico
 /vendor/
 
 /static/banners/*
+
+/docker/nginx/ssl/*
