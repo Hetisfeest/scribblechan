@@ -167,6 +167,19 @@
 				return !in_array($board['uri'], $excluded_boards);
 			});
 
+			$ordered_uris = array_keys($config['boards'][1]);
+			$filtered = array_filter($boardlist, function($item) use ($ordered_uris) {
+				return in_array($item['uri'], $ordered_uris);
+			});
+
+			usort($filtered, function($a, $b) use ($ordered_uris) {
+				$posA = array_search($a['uri'], $ordered_uris);
+				$posB = array_search($b['uri'], $ordered_uris);
+				return $posA - $posB;
+			});
+
+			$filtered = array_values($filtered);
+
 
 			return Element('themes/index/index.html', Array(
 				'settings' => $settings,
@@ -176,7 +189,7 @@
 				'recent_posts' => $recent_posts,
 				'stats' => $stats,
 				'news' => $news,
-				'boards' => $boardlist
+				'boards' => $filtered
 			));
 		}
 	};
