@@ -1016,8 +1016,9 @@
 		// Default; there is no additional/custom stylesheet for this.
 		'Yotsuba B' => '',
 		'Yotsuba' => 'yotsuba.css',
-        'futaba' => 'futaba+vichan.css',
-        'gentoochan' => 'gentoochan.css'
+        'Futaba' => 'futaba+vichan.css',
+        'Gentoochan' => 'gentoochan.css',
+        'Dark' => 'darkdili_colors.css',
 	];
 	// $config['stylesheets']['Futaba'] = 'futaba.css';
 	// $config['stylesheets']['Dark'] = 'dark.css';

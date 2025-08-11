@@ -1,0 +1,283 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+/* body styles, inherited by whole page */
+/*
+ * Name           : DarkEnd
+ * About          : This is copyed and edited from the EndChan Global CSS.
+ * Author         : TheJellyBeanKing / OdiliTime
+ * Orginal Author : cssguy
+ * Version        : 2.5
+ * Latest Update  : Major changes
+ */
+
+/* body */
+html body {
+  background: #1d1f21 none;
+  color: #C5C8C6;
+}
+
+html hr {
+  border-top: 1px solid #282a2e;
+}
+
+/* header and nav / top of page styles */
+
+/* front page */
+html .infoBox {
+  background-color: #282a2e;
+  border-color: #111;
+  color: #C5C8C6;
+}
+
+/* page top */
+html nav {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  background-color: #282a2e;
+  color: #C5C8C6;
+  border-bottom: 1px solid #000;
+}
+
+/* board list */
+html .boardsCell:nth-of-type(odd) span {
+  background-color: #121212;
+}
+html #boardsCellHeader span {
+  background-color: #121212;
+  color: #DADADA;
+}
+
+html input[type="text"], html input[type="submit"] {
+  border: 1px solid #AAA;
+}
+
+/* thread and board pages */
+html .threadPages {
+  background-color: #282a2e;
+  color: #C5C8C6;
+  border-color: #282a2e;
+  /*
+  background-color: #282a2e;
+  */
+}
+
+/* board banner */
+html #modeBanner {
+  background-color: #770A0D;
+  color: #fff;
+}
+
+html .boardHeader p {
+  color: #C5C8C6;
+}
+
+html a {
+  color: #56567c;
+}
+
+/*
+html a:visited {
+  color: #81a2be;
+}
+*/
+
+html #modeBanner {
+  background-color: #C5C8C6;
+  color: #1d1f21;
+}
+
+/* post new thread */
+html .form-post th {
+  background-color: #282a2e;
+}
+
+html input, html textarea {
+  border: 1px solid #AAA;
+  background-color: #444;
+  color: #BBB;
+}
+
+
+/* footer */
+html footer {
+  background-color: #282a2e;
+  border-color: #111;
+  color: #C5C8C6;
+}
+
+/* boards */
+html .boardPages, html #divPages {
+  border-color: #282a2e;
+  background-color: #282a2e;
+}
+
+/* post form plus qr */
+html input, html textarea {
+  border: 1px solid #AAA;
+}
+
+/* thread/post report and management form */
+html .contentAction, html #transferControls, html #ipDelete {
+  background: #282a2e;
+  border-color: #282a2e;
+}
+
+/* thread pages */
+
+/* thread list, some elements are in the post section */
+html .innerPost, html .markedPost {
+  background: #282a2e;
+  border-color: #282a2e;
+}
+
+html .markedPost {
+  background-color: #1d1d21;
+  border: 1px solid #111;
+}
+
+html .linkName {
+  color: #56567c;
+}
+
+html .linkName:hover {
+  color: #F20;
+}
+
+html .noEmailName, html .noEmailName:hover {
+  color: #C5C8C6;
+}
+
+html .quoteLink {
+  color: #56567c;
+}
+
+html .linkSelf {
+  color: #C5C8C6;
+}
+
+html .linkSelf:hover {
+  color: #5F89AC;
+}
+
+html .linkQuote {
+  color: #C5C8C6;
+}
+
+html .linkQuote:hover {
+  color: #5F89AC;
+}
+
+html .labelSubject {
+  color: #b294bb;
+}
+
+html .labelRole {
+  color: #ff0000;
+}
+
+html .divBanMessage {
+  color: #C5C8C6;
+}
+
+/* markdown */
+html .greenText {
+  color: #adbd68;
+}
+
+html .redText {
+  color: #F20;
+}
+
+html span.spoiler {
+  background: #000;
+  color: #000;
+}
+
+html .spoiler:hover {
+  background: #282a2e;
+  color: #C5C8C6;
+}
+
+/* refresh timer */
+
+/* catalog */
+/* this is important since the catalog cell container shares the same id as the actual threads container on other pages */
+html .red {
+  color: #af0a0f;
+}
+
+html .linkThumb img {
+  color: #6f0a0f;
+}
+
+html .catalogCell {
+  background-color: rgba(182, 182, 182, 0.12);
+  border: 2px solid rgba(111, 111, 111, 0.34);
+}
+
+/* archive pages */
+
+/* static pages */
+
+/* index page */
+
+/* CSS for pages that deal with site and account settings and bans */
+
+/* Quick reply */
+html #quick-reply th {
+  border: 1px solid #222;
+}
+
+html #quick-reply form[name=post] .post-table th {
+  background-color: #121212;
+}
+
+html #quick-reply th .handle {
+  background-color: #121212;
+  border: solid 1px #535353;
+  color: #DADADA;
+}
+
+html #quick-reply td.recaptcha span {
+  border: 1px solid #ccc;
+}
+
+html #quick-reply table {
+  background: #121212;
+  border: solid 1px #535353;
+  color: #DADADA;
+}
+
+html button#qrbutton {
+  background-color: #121212;
+  border: solid 1px #535353;
+  color: #DADADA;
+}
+
+html textarea#qrbody, input#qrpassword {
+  background-color: #121212;
+  border: solid 1px #535353;
+  color: #DADADA;
+}
+
+html *:focus {
+  outline-color: #DADADA;
+}
+
+/*
+html .selectedCell, html #dropzone {
+  background-color: rgb(11, 11, 11);
+}
+*/
+
+html #dropzone {
+  color: #DADADA;
+  border: solid 1px #535353;
+}
+
+html .removeButton {
+  color: rgba(125, 125, 125, 0.5);
+}
+
+html .removeButton:hover {
+  color: #7D7D7D;
+}
