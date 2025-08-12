@@ -9,7 +9,6 @@
  */
 	$config['additional_javascript'][] = 'js/jquery.min.js';
     $config['additional_javascript'][] = 'js/jquery-ui.custom.min.js';
-	$config['additional_javascript'][] = 'js/style-select.js';
 
 
 	// Database stuff

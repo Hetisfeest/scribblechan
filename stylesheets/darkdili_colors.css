@@ -16,6 +16,10 @@ html body {
   color: #C5C8C6;
 }
 
+img.board_image{
+  border: none;
+}
+
 html hr {
   border-top: 1px solid #282a2e;
 }
@@ -30,7 +34,7 @@ html .infoBox {
 }
 
 /* page top */
-html nav {
+html .boardList {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   background-color: #282a2e;
   color: #C5C8C6;
@@ -60,13 +64,9 @@ html .threadPages {
   */
 }
 
-/* board banner */
-html #modeBanner {
-  background-color: #770A0D;
-  color: #fff;
-}
 
-html .boardHeader p {
+
+html header div.subtitle, h1 {
   color: #C5C8C6;
 }
 
@@ -74,20 +74,34 @@ html a {
   color: #56567c;
 }
 
-/*
+
 html a:visited {
+  color: #56567c;
+}
+
+html a:hover{
   color: #81a2be;
 }
-*/
 
-html #modeBanner {
+
+html .banner {
   background-color: #C5C8C6;
   color: #1d1f21;
 }
 
 /* post new thread */
-html .form-post th {
+
+html form table tr th, div.pages {
   background-color: #282a2e;
+  color: #C5C8C6
+}
+
+div.pages{
+  border: none;
+}
+
+html .intro span.name {
+  color: #C5C8C6;
 }
 
 html input, html textarea {
@@ -96,13 +110,29 @@ html input, html textarea {
   color: #BBB;
 }
 
+div.ban ,.news-header .ban p, .box.boards, .box.left{
+  background-color: #444;
+  color: #BBB;
+  border: 0px;
+}
+
+.box.boards a{
+  color: #BBB;
+}
+
+.box.boards h2{
+  background-color: #81a2be;;
+  color: #56567c;
+}
+
+div.ban h2{
+  background-color: #b294bb;
+  color: #56567c;
+}
+
 
 /* footer */
-html footer {
-  background-color: #282a2e;
-  border-color: #111;
-  color: #C5C8C6;
-}
+
 
 /* boards */
 html .boardPages, html #divPages {
@@ -124,7 +154,7 @@ html .contentAction, html #transferControls, html #ipDelete {
 /* thread pages */
 
 /* thread list, some elements are in the post section */
-html .innerPost, html .markedPost {
+html div.post.reply{
   background: #282a2e;
   border-color: #282a2e;
 }
@@ -134,19 +164,19 @@ html .markedPost {
   border: 1px solid #111;
 }
 
-html .linkName {
+html .intro a.email span.name {
   color: #56567c;
 }
 
-html .linkName:hover {
+html a .intro a.email span.name:hover {
   color: #F20;
 }
 
-html .noEmailName, html .noEmailName:hover {
+html .intro a.email span.name, html .intro a.email span.name:hover {
   color: #C5C8C6;
 }
 
-html .quoteLink {
+html div.post.reply div.body a[href]  {
   color: #56567c;
 }
 
@@ -166,7 +196,7 @@ html .linkQuote:hover {
   color: #5F89AC;
 }
 
-html .labelSubject {
+html .intro span.subject, div.blotter, div.pages a.selected {
   color: #b294bb;
 }
 
@@ -280,4 +310,8 @@ html .removeButton {
 
 html .removeButton:hover {
   color: #7D7D7D;
+}
+
+{
+
 }

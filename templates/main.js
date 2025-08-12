@@ -236,9 +236,8 @@ function initStyleChooser() {
 		style.href = 'javascript:void(0);';
 		newElement.appendChild(style);
 	}
-
-	document.getElementsByTagName('body')[0].insertBefore(newElement, document.getElementsByTagName('body')[0].lastChild.nextSibling);
-}
+	document.querySelector('div.boardlist').insertBefore(newElement, document.querySelector('div.boardlist.bottom').lastChild.nextSibling);
+	}
 
 function getCookie(cookie_name) {
 	let results = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');

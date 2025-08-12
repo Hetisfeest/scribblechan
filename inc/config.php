@@ -1123,8 +1123,8 @@
 	$config['additional_javascript'][] = 'js/inline-expanding.js';
 
     $config['additional_javascript'][] = 'js/ajax.js';
-    $config['additional_javascript'][] = 'js/file-selector.js';
-	// $config['additional_javascript'][] = 'js/local-time.js';
+    $config['additional_javascript'][] = 'js/strftime.min.js';
+    $config['additional_javascript'][] = 'js/local-time.js';
 
 	// Some scripts require jQuery. Check the comments in script files to see what's needed. When enabling
 	// jQuery, you should first empty the array so that "js/query.min.js" can be the first, and then re-add
@@ -1134,8 +1134,9 @@
 	// $config['additional_javascript'][] = 'js/jquery.min.js';
 	// $config['additional_javascript'][] = 'js/inline-expanding.js';
 	// $config['additional_javascript'][] = 'js/auto-reload.js';
-	// $config['additional_javascript'][] = 'js/post-hover.js';
-	// $config['additional_javascript'][] = 'js/style-select.js';
+    $config['additional_javascript'][] = 'js/post-hover.js';
+    $config['additional_javascript'][] = 'js/style-select.js';
+    $config['additional_javascript'][] = 'js/catalog-link.js';
 	// $config['additional_javascript'][] = 'js/captcha.js';
 
 	// Where these script files are located on the web. Defaults to $config['root'].
