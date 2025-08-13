@@ -1018,7 +1018,8 @@
 		'Yotsuba' => 'yotsuba.css',
         'Futaba' => 'futaba+vichan.css',
         'Gentoochan' => 'gentoochan.css',
-        'Dark' => 'darkdili_colors.css',
+        'Novo Jungle' => 'novo_jungle.css',
+        'SC Dark' => 'darkdili_colors.css',
 	];
 	// $config['stylesheets']['Futaba'] = 'futaba.css';
 	// $config['stylesheets']['Dark'] = 'dark.css';

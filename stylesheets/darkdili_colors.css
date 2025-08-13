@@ -1,15 +1,5 @@
 @namespace url(http://www.w3.org/1999/xhtml);
 
-/* body styles, inherited by whole page */
-/*
- * Name           : DarkEnd
- * About          : This is copyed and edited from the EndChan Global CSS.
- * Author         : TheJellyBeanKing / OdiliTime
- * Orginal Author : cssguy
- * Version        : 2.5
- * Latest Update  : Major changes
- */
-
 /* body */
 html body {
   background: #1d1f21 none;
