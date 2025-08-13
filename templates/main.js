@@ -236,9 +236,36 @@ function initStyleChooser() {
 		style.href = 'javascript:void(0);';
 		newElement.appendChild(style);
 	}
+	document.querySelector('div.boardlist')?.appendChild(newElement);
 
-	document.getElementsByTagName('body')[0].insertBefore(newElement, document.getElementsByTagName('body')[0].lastChild.nextSibling);
-}
+	let stylesSelect = $('<select></select>');
+	let stylesDiv = $('div.styles');
+
+	let i = 1;
+	stylesDiv.children().each(function() {
+		let opt = $('<option></option>')
+			.html(this.innerHTML.replace(/(^\[|\]$)/g, ''))
+			.val(i);
+		if ($(this).hasClass('selected')) {
+			opt.attr('selected', true);
+		}
+		stylesSelect.append(opt);
+		$(this).attr('id', 'style-select-' + i);
+		i++;
+	});
+
+	stylesSelect.change(function() {
+		$('#style-select-' + $(this).val()).click();
+	});
+
+	stylesDiv.hide();
+
+	stylesDiv.after(
+		$('<div id="style-select" style="float:right;margin-bottom:10px"></div>')
+			.text(_('Style: '))
+			.append(stylesSelect)
+	);
+	}
 
 function getCookie(cookie_name) {
 	let results = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
