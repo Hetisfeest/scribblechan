@@ -1135,7 +1135,7 @@
 	// $config['additional_javascript'][] = 'js/inline-expanding.js';
 	// $config['additional_javascript'][] = 'js/auto-reload.js';
     $config['additional_javascript'][] = 'js/post-hover.js';
-    $config['additional_javascript'][] = 'js/style-select.js';
+    //$config['additional_javascript'][] = 'js/style-select.js'; //implemented with main.js
     $config['additional_javascript'][] = 'js/catalog-link.js';
 	// $config['additional_javascript'][] = 'js/captcha.js';
 
@@ -1150,7 +1150,7 @@
 
 	// Version number for main.js (or $config['url_javascript']).
 	// You can use this to bypass the user's browsers and CDN caches.
-	$config['resource_version'] = 0;
+	$config['resource_version'] = 2;
 
 	// Dispatch thumbnail loading and image configuration with JavaScript. It will need a certain javascript
 	// code to work.
