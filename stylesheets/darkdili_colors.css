@@ -117,7 +117,16 @@ div.ban ,.news-header .ban p, .box.boards, .box.left{
 
 div.ban h2{
   background-color: #b294bb;
+  background-color: #b294bb;
   color: #56567c;
+}
+
+.box.left h2{
+  background-color: #99BA79
+}
+
+html div.post.reply.highlighted{
+    background-color: #282a2e;
 }
 
 
@@ -167,7 +176,7 @@ html .intro a.email span.name, html .intro a.email span.name:hover {
 }
 
 html div.post.reply div.body a[href]  {
-  color: #56567c;
+  color: #C5C8C6;
 }
 
 html .linkSelf {
@@ -199,7 +208,7 @@ html .divBanMessage {
 }
 
 /* markdown */
-html .greenText {
+html .greenText, span.quote {
   color: #adbd68;
 }
 
