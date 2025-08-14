@@ -6,3 +6,4 @@ RUN adduser --system www-data \
 
 CMD [ "nginx", "-g", "daemon off;" ]
 EXPOSE 80
+

@@ -19,7 +19,8 @@
         "mrclay/minify": "^2.1.6",
         "geoip/geoip": "^1.17",
         "dapphp/securimage": "^4.0",
-        "erusev/parsedown":  "^1.7.4"
+        "erusev/parsedown":  "^1.7.4",
+        "landrok/language-detector": "^1.4"
     },
     "autoload": {
         "classmap": ["inc/"],

@@ -748,6 +748,7 @@ function displayBan($ban) {
 	));
 }
 
+
 function checkBan($board = false) {
 	global $config;
 
@@ -1726,6 +1727,11 @@ function buildJavascript() {
 	}
 
 	file_write($config['file_script'], $script);
+}
+
+function checkBlockedLanguage($body, $language = 'ru'){
+    $detector = new LanguageDetector\LanguageDetector();
+    return $detector->evaluate($body) == $language;
 }
 
 function checkDNSBL() {
