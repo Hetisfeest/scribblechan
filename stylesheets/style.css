@@ -189,6 +189,7 @@ img.banner,img.board_image {
   display: block;
   border: 1px solid #a9a9a9;
   margin: 12px auto 0 auto;
+  margin-left: calc(50% - 200px);
 }
 
 .post-image {
