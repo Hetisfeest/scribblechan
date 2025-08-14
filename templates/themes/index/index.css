@@ -212,11 +212,11 @@
 .news-header .ban{
 	display: table;
 	height: 150px;
-	margin-top: 12px;
-	margin-bottom: 0px;
+	margin: 0;
 	float: right;
-	width: 100%;
+	width: calc(100% - 420px);
 	max-width: 640px;
+	min-width: 400px;
 }
 
 .news-header .ban p {
@@ -227,7 +227,10 @@
 
 .news-header .board_image{
 	float:left;
+	margin: 0px !important;
 }
+
+
 
 #foot{
 	height:30px;
@@ -272,10 +275,17 @@
 }
 
 @media (max-width: 550px) {
-	.board_image {
+	img.board_image {
 		width: 100%;
 		height: auto;
 		max-height: 150px;
+		max-width: 400px;
+	}
+
+	.news-header .ban {
+		width: 100%;
+		min-width: auto;
+		max-width: 400px
 	}
 }
 
@@ -285,8 +295,15 @@
 	align-items: center;
 	gap: 15px;
 	flex-wrap: wrap;
-	padding: 10px;
+	padding: 0px;
 	margin-top: 0px;
+	padding-top: 30px;
+}
+
+@media (max-width: 1102px) {
+	.box-wrap.news-header {
+		justify-content: center;
+	}
 }
 
 .box-container{

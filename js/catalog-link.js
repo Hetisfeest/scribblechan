@@ -30,12 +30,15 @@ function catalog() {
     var link = document.createElement('a');
     link.href = catalog_url;
 
+    /*
     if (!pages) {
         link.textContent = '['+_('Catalog')+']';
         link.style.paddingLeft = '10px';
         link.style.textDecoration = "underline";
         document.body.insertBefore(link, bottom);
     }
+    */
+
 
     if (subtitle) { 
         var link2 = document.createElement('a');
