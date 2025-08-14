@@ -805,9 +805,10 @@ if (isset($_POST['delete'])) {
 	$post['has_file'] = (!isset($post['embed']) && (($post['op'] && !isset($post['no_longer_require_an_image_for_op']) && $config['force_image_op']) || count($_FILES) > 0));
 
 	if (!$dropped_post) {
-        if(checkBlockedLanguage($post['body'])){
-            error($config['error']['bot']);
-        }
+
+        checkBlockedLanguage($post['body']);
+
+
 		if (!($post['has_file'] || isset($post['embed'])) || (($post['op'] && $config['force_body_op']) || (!$post['op'] && $config['force_body']))) {
 			$stripped_whitespace = preg_replace('/[\s]/u', '', $post['body']);
 			if ($stripped_whitespace == '') {

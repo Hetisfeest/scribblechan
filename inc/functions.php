@@ -1729,9 +1729,13 @@ function buildJavascript() {
 	file_write($config['file_script'], $script);
 }
 
-function checkBlockedLanguage($body, $language = 'ru'){
-    $detector = new LanguageDetector\LanguageDetector();
-    return $detector->evaluate($body) == $language;
+function checkBlockedLanguage($body){
+    global $config;
+    $detector = new LanguageDetector\LanguageDetector(null,['ru', 'en']);
+    $scores = $detector->evaluate($body)->getScores();
+
+    if($scores['ru'] > $scores['en'])
+        error($config['error']['bot']);
 }
 
 function checkDNSBL() {
