@@ -760,7 +760,7 @@
 	// Maximum number of images allowed. Increasing this number enabled multi image.
 	// If you make it more than 1, make sure to enable the below script for the post form to change.
 	// $config['additional_javascript'][] = 'js/multi-image.js';
-	$config['max_images'] = 1;
+	$config['max_images'] = 3;
 
 	// Method to use for determing the max filesize.
 	// "split" means that your max filesize is split between the images. For example, if your max filesize
@@ -1138,6 +1138,9 @@
     $config['additional_javascript'][] = 'js/post-hover.js';
     //$config['additional_javascript'][] = 'js/style-select.js'; //implemented with main.js
     $config['additional_javascript'][] = 'js/catalog-link.js';
+    $config['additional_javascript'][] = 'js/multi-image.js';
+    $config['additional_javascript'][] = 'js/file-selector.js';
+
 	// $config['additional_javascript'][] = 'js/captcha.js';
 
 	// Where these script files are located on the web. Defaults to $config['root'].
@@ -1151,7 +1154,7 @@
 
 	// Version number for main.js (or $config['url_javascript']).
 	// You can use this to bypass the user's browsers and CDN caches.
-	$config['resource_version'] = 2;
+	$config['resource_version'] = 3;
 
 	// Dispatch thumbnail loading and image configuration with JavaScript. It will need a certain javascript
 	// code to work.
