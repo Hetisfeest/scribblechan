@@ -1730,7 +1730,7 @@ function buildJavascript() {
 }
 
 function checkBlockedLanguage($body, $language = 'ru'){
-    $detector = new LanguageDetector\LanguageDetector();
+    $detector = new LanguageDetector\LanguageDetector(null,['en', 'ru']);
     return $detector->evaluate($body) == $language;
 }
 
