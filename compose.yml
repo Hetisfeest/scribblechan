@@ -5,6 +5,7 @@ services:
       dockerfile: ./docker/nginx/Dockerfile
     container_name: vichan_web
     restart: unless-stopped
+    memswap_limit: -1
     volumes:
       - ./local-instances/${INSTANCE:-0}/www:/var/www
       - ./docker/nginx/vichan.conf:/etc/nginx/conf.d/default.conf
@@ -26,6 +27,7 @@ services:
       dockerfile: ./docker/php/Dockerfile
     container_name: vichan_php
     restart: unless-stopped
+    memswap_limit: -1
     volumes:
       - ./local-instances/${INSTANCE:-0}/www:/var/www
       - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
